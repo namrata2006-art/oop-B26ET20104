@@ -1,0 +1,47 @@
+
+#include <iostream>
+using namespace std;
+
+// Function Template
+template <class T>
+T add(T a, T b) {
+    return a + b;
+}
+
+// Class Template
+template <class T>
+class Number {
+    T num;
+
+public:
+    void getData() {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+
+    void display() {
+        cout << "Entered number is: " << num << endl;
+    }
+};
+
+int main() {
+    int a, b;
+
+    // Function Template
+    cout << "Enter two integers: ";
+    cin >> a >> b;
+
+    cout << "Addition = " << add(a, b) << endl;
+
+    // Class Template for Integer
+    Number<int> n1;
+    n1.getData();
+    n1.display();
+
+    // Class Template for Float
+    Number<float> n2;
+    n2.getData();
+    n2.display();
+
+    return 0;
+}
