@@ -1,0 +1,37 @@
+
+#include <iostream>
+using namespace std;
+
+// First Namespace
+namespace First {
+    void display() {
+        cout << "This is First Namespace." << endl;
+    }
+
+    int value = 100;
+}
+
+// Second Namespace
+namespace Second {
+    void display() {
+        cout << "This is Second Namespace." << endl;
+    }
+
+    int value = 200;
+}
+
+int main() {
+
+    // Calling functions using namespace name
+    First::display();
+    Second::display();
+
+    // Accessing variables using namespace name
+    cout << "Value from First Namespace: "
+         << First::value << endl;
+
+    cout << "Value from Second Namespace: "
+         << Second::value << endl;
+
+    return 0;
+}
