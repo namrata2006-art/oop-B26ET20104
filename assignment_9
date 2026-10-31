@@ -1,0 +1,49 @@
+
+#include <iostream>
+using namespace std;
+
+// Base Class
+class Employee {
+public:
+    virtual void display() {
+        cout << "Employee Information" << endl;
+    }
+};
+
+// Derived Class 1
+class Manager : public Employee {
+public:
+    void display() {
+        cout << "Employee Designation: Manager" << endl;
+        cout << "Salary: 50000" << endl;
+    }
+};
+
+// Derived Class 2
+class Developer : public Employee {
+public:
+    void display() {
+        cout << "Employee Designation: Developer" << endl;
+        cout << "Salary: 40000" << endl;
+    }
+};
+
+// Main Function
+int main() {
+    Employee *ptr;
+
+    Manager m;
+    Developer d;
+
+    // Calling Manager function
+    ptr = &m;
+    ptr->display();
+
+    cout << endl;
+
+    // Calling Developer function
+    ptr = &d;
+    ptr->display();
+
+    return 0;
+}
