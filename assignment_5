@@ -1,0 +1,35 @@
+
+#include <iostream>
+using namespace std;
+
+class Addition {
+public:
+
+    // Function with two integer arguments
+    void add(int a, int b) {
+        cout << "Addition of two integers: "
+             << a + b << endl;
+    }
+
+    // Function with three integer arguments
+    void add(int a, int b, int c) {
+        cout << "Addition of three integers: "
+             << a + b + c << endl;
+    }
+
+    // Function with two float arguments
+    void add(float a, float b) {
+        cout << "Addition of two float numbers: "
+             << a + b << endl;
+    }
+};
+
+int main() {
+    Addition obj;
+
+    obj.add(10, 20);
+    obj.add(10, 20, 30);
+    obj.add(5.5f, 4.5f);
+
+    return 0;
+}
