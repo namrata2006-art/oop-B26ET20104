@@ -1,0 +1,69 @@
+
+#include <iostream>
+using namespace std;
+
+// Base Class 1
+class BasicInfo {
+protected:
+    int emp_id;
+    string name;
+    int age;
+
+public:
+    void readBasicInfo() {
+        cout << "Enter Employee ID: ";
+        cin >> emp_id;
+
+        cout << "Enter Employee Name: ";
+        cin >> name;
+
+        cout << "Enter Employee Age: ";
+        cin >> age;
+    }
+};
+
+// Base Class 2
+class DepartmentInfo {
+protected:
+    string department;
+    float salary;
+
+public:
+    void readDepartmentInfo() {
+        cout << "Enter Department Name: ";
+        cin >> department;
+
+        cout << "Enter Salary: ";
+        cin >> salary;
+    }
+};
+
+// Derived Class using Multiple Inheritance
+class Employee : public BasicInfo, public DepartmentInfo {
+public:
+    void read() {
+        readBasicInfo();
+        readDepartmentInfo();
+    }
+
+    void display() {
+        cout << "\n----- Employee Information -----" << endl;
+
+        cout << "Employee ID: " << emp_id << endl;
+        cout << "Employee Name: " << name << endl;
+        cout << "Employee Age: " << age << endl;
+        cout << "Department: " << department << endl;
+        cout << "Salary: " << salary << endl;
+    }
+};
+
+int main() {
+    Employee e;
+
+    cout << "Enter Employee Information:" << endl;
+
+    e.read();
+    e.display();
+
+    return 0;
+}
